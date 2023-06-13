@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bereaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
+/*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 00:01:01 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/13 02:08:27 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/13 19:28:34 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ public:
 	Bereaucrat &operator=(const Bereaucrat &src);
 	~Bereaucrat();
 
-	void GradeTooHighException();
-	void GradeTooLowException();
-	const std::string getName() const;
-	int getGrade() const;
-	void increaseGrade();
-	void decreaseGrade();
+	void GradeTooHighException(void);
+	void GradeTooLowException(void);
+	const std::string getName(void) const;
+	int getGrade(void) const;
+	void increaseGrade(void);
+	void decreaseGrade(void);
 
 private:
 	const std::string &_name;
