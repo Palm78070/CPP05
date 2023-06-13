@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:13 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/13 20:06:04 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/13 20:29:35 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void Bereaucrat::decreaseGrade(void)
 	std::cout << "Try to decrease grade of " << this->_name << std::endl;
 	try
 	{
-		if (!(grade + 1 >= 1 && grade + 1 <= 150))
+		if (!(grade >= 1 && grade <= 150))
 			throw grade;
 		else
 			this->_grade += 1;
