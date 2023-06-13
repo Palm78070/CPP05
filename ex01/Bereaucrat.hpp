@@ -6,10 +6,9 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 00:01:01 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/13 21:58:01 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/13 21:58:08 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef BEREAUCRAT_H
 #define BEREAUCRAT_H
@@ -30,6 +29,7 @@ public:
 	int getGrade(void) const;
 	void increaseGrade(void);
 	void decreaseGrade(void);
+	void signForm(const Form &src);
 
 private:
 	const std::string &_name;
