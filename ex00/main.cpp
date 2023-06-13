@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:19 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/13 20:30:43 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/13 21:20:25 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@ int main(void)
 	Bereaucrat Bob("Bob", 1);
 	std::cout << Bob;
 	std::cout << "\n////////////////////////////////////////////////\n" << std::endl;
-	std::cout << "///////////////// Decrease grade Test //////////////\n" << std::endl;
-	while (Bob.getGrade() < 149)
-		Bob.decreaseGrade();
-	Bob.decreaseGrade();
-	std::cout << Bob;
-	Bob.decreaseGrade();
-	std::cout << "\n//////////////////////////////////////////////////\n" << std::endl;
 	std::cout << "///////////////// Increase grade Test //////////////\n" << std::endl;
 	Bob.increaseGrade();
 	std::cout << Bob;
@@ -56,5 +49,12 @@ int main(void)
 	std::cout << "Check grade of Bob2 => ";
 	std::cout << Bob2;
 	std::cout << "\n////////////////////////////////////////////////////\n" << std::endl;
+	std::cout << "///////////////// Decrease grade Test //////////////\n" << std::endl;
+	while (Bob.getGrade() < 149)
+		Bob.decreaseGrade();
+	Bob.decreaseGrade();
+	std::cout << Bob;
+	Bob.decreaseGrade();
+	std::cout << "\n//////////////////////////////////////////////////\n" << std::endl;
 	return (0);
 }
