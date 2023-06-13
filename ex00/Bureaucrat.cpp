@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:13 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/14 00:04:40 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/14 01:47:02 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void Bureaucrat::increaseGrade(void)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+	else
+		this->_grade -= 1;
 }
 
 void Bureaucrat::decreaseGrade(void)
@@ -103,6 +105,8 @@ void Bureaucrat::decreaseGrade(void)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+	else
+		this->_grade += 1;
 }
 
 std::ostream &operator<<(std::ostream &output, const Bureaucrat &src)
