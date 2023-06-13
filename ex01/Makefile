@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+         #
+#    By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/12 23:54:23 by rthammat          #+#    #+#              #
-#    Updated: 2023/06/13 02:22:44 by rthammat         ###   ########.fr        #
+#    Updated: 2023/06/13 22:05:55 by rthammat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ CXXFLAGS := -Wall -Werror -Wextra --std=c++98 -g
 
 SRCS := main.cpp \
 	Bereaucrat.cpp \
+	Form.cpp \
 
 OBJS := $(SRCS:.cpp=.o)
 
