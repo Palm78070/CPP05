@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:13 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/14 18:11:47 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/14 22:08:19 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,25 @@ void Bureaucrat::decreaseGrade(void)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade += 1;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+	}
+	catch (Form::GradeTooHighException &e)
+	{
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+		return ;
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+		return ;
+	}
+	std::cout << this->getName() << " signed " << form.getName() << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &output, const Bureaucrat &src)

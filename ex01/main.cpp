@@ -6,55 +6,61 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:19 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/13 21:20:25 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/14 21:18:45 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bereaucrat.hpp"
+#include "Form.hpp"
+
+void	ft_signForm(const Bureaucrat &src, Form &form)
+{
+	try
+	{
+		form.beSigned(src);
+	}
+	catch (Form::GradeTooHighException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
 
 int main(void)
 {
-	std::cout << "/////////////////// Basic Test /////////////////\n" << std::endl;
-	Bereaucrat Bob("Bob", 1);
-	std::cout << Bob;
-	std::cout << "\n////////////////////////////////////////////////\n" << std::endl;
-	std::cout << "///////////////// Increase grade Test //////////////\n" << std::endl;
-	Bob.increaseGrade();
-	std::cout << Bob;
-	std::cout << "\n//////////////////////////////////////////////////\n" << std::endl;
-	std::cout << "///////////////// decrease grade Test //////////////\n " << std::endl;
-	Bob.decreaseGrade();
-	std::cout << Bob;
-	std::cout << "\n//////////////////////////////////////////////////\n" << std::endl;
-	std::cout << "///////////////// Increase grade Test //////////////\n" << std::endl;
-	Bob.increaseGrade();
-	std::cout << Bob;
-	std::cout << "\n//////////////////////////////////////////////////\n" << std::endl;
-	std::cout << "///////////////////// Deep copy Test /////////////////\n" << std::endl;
-	Bereaucrat Bob2 = Bereaucrat(Bob);
-	std::cout << "This is Bob2 => ";
-	std::cout << Bob2;
-	std::cout << "decrease grade of Bob2 => ";
-	Bob2.decreaseGrade();
-	std::cout << "Check grade of Bob2 => ";
-	std::cout << Bob2;
-	std::cout << "Check grade of original Bob => ";
-	std::cout << Bob;
-	std::cout << "decrease grade of original Bob => ";
-	Bob.decreaseGrade();
-	Bob.decreaseGrade();
-	Bob.decreaseGrade();
-	std::cout << "Check grade of original Bob => ";
-	std::cout << Bob;
-	std::cout << "Check grade of Bob2 => ";
-	std::cout << Bob2;
-	std::cout << "\n////////////////////////////////////////////////////\n" << std::endl;
-	std::cout << "///////////////// Decrease grade Test //////////////\n" << std::endl;
-	while (Bob.getGrade() < 149)
-		Bob.decreaseGrade();
-	Bob.decreaseGrade();
-	std::cout << Bob;
-	Bob.decreaseGrade();
-	std::cout << "\n//////////////////////////////////////////////////\n" << std::endl;
+	std::cout << "///////////////// Normal case Test //////////////" << std::endl;
+	Bureaucrat Bob = Bureaucrat("Bob", 1);
+	std::cout << Bob << std::endl;
+	Form form1 = Form("Form1", 145, 137);
+	std::cout << form1 << std::endl;
+	Bob.signForm(form1);
+	std::cout << "Signed status after " << Bob.getName() << " sign form => " << form1.getSignStatus() << std::endl;
+	std::cout << "///////////////////////////////////////////////////" << std::endl;
+	std::cout << "\n///////////////// Sign status Test //////////////" << std::endl;
+	Bureaucrat Ken = Bureaucrat("Ken", 150);
+	std::cout << Ken << std::endl;
+	Form form2 = Form("Form2", 72, 45);
+	std::cout << form2 << std::endl;
+	Ken.signForm(form2);
+	std::cout << "///////////////////////////////////////////////////" << std::endl;
+	std::cout << "\n///////////////// Grade high/Low Test //////////////" << std::endl;
+	try
+	{
+		Form formOut1 = Form("FormOut1", 151, 10);
+	}
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		Form formOut2 = Form("FormOut2", 20, 0);
+	}
+	catch (Form::GradeTooHighException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return (0);
 }

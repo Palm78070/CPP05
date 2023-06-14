@@ -6,18 +6,18 @@
 #    By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/12 23:54:23 by rthammat          #+#    #+#              #
-#    Updated: 2023/06/13 22:05:55 by rthammat         ###   ########.fr        #
+#    Updated: 2023/06/14 19:30:43 by rthammat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := ./Bereaucrat
+NAME := ./Form
 
 CXX := c++
 
 CXXFLAGS := -Wall -Werror -Wextra --std=c++98 -g
 
 SRCS := main.cpp \
-	Bereaucrat.cpp \
+	Bureaucrat.cpp \
 	Form.cpp \
 
 OBJS := $(SRCS:.cpp=.o)

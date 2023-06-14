@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 00:01:01 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/14 00:08:49 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/14 21:09:14 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 #define BUREAUCRAT_H
 
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -24,12 +27,12 @@ public:
 	Bureaucrat &operator=(const Bureaucrat &src);
 	~Bureaucrat();
 
-	//void GradeTooHighException(void);
-	//void GradeTooLowException(void);
+
 	const std::string getName(void) const;
 	int getGrade(void) const;
 	void increaseGrade(void);
 	void decreaseGrade(void);
+	void signForm(Form &form);
 
 	class GradeTooHighException : public std::exception
 	{

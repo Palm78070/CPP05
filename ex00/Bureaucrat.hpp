@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 00:01:01 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/14 00:08:49 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/14 18:13:31 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ public:
 	Bureaucrat &operator=(const Bureaucrat &src);
 	~Bureaucrat();
 
-	//void GradeTooHighException(void);
-	//void GradeTooLowException(void);
 	const std::string getName(void) const;
 	int getGrade(void) const;
 	void increaseGrade(void);

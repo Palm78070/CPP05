@@ -6,14 +6,16 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 21:57:34 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/13 22:27:59 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/14 20:55:30 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_H
 #define FORM_H
 
-#include "Bereaucrat.hpp"
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class	Form
 {
@@ -23,12 +25,28 @@ class	Form
 		Form &operator=(const Form &src);
 		~Form();
 
-		void GradeTooHighException(void);
-		void GradeTooLowException(void);
 		const std::string getName(void) const;
 		int getGradeSign(void) const;
 		int getGradeExec(void) const;
-		void beSigned(const Bereaucrat &src);
+		bool getSignStatus(void) const;
+		void beSigned(const Bureaucrat &src);
+
+	class GradeTooHighException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw()
+			{
+				return ("Grade is too high");
+			}
+	};
+	class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw()
+			{
+				return ("Grade is too low");
+			}
+	};
 
 	private:
 		const std::string	_name;
@@ -36,5 +54,6 @@ class	Form
 		const int	_gradeSign;
 		const int	_gradeExec;
 };
+std::ostream &operator<<(std::ostream &output, const Form &src);
 
 #endif
