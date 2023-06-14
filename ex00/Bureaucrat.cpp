@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:13 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/14 18:12:04 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/14 22:21:02 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src._name), _grade(src._gr
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
 {
-	std::cout << "Use operator overload=" << std::endl;
 	if (this != &src)
 	{
 		this->_grade = src.getGrade();

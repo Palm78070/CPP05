@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:19 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/14 01:47:33 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/14 22:20:31 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,12 @@ int main(void)
 	std::cout << John << std::endl;
 	ft_increase(John);
 	std::cout << John << std::endl;
+	std::cout << "//////////////////////////////////////////////////\n" << std::endl;
+	std::cout << "///////////////// Deep copy Test //////////////" << std::endl;
+	std::cout << Bob <<std::endl;
+	Bureaucrat Bob2 = Bureaucrat(Bob);
+	std::cout << "\n";
+	std::cout << Bob2 <<std::endl;
 	std::cout << "//////////////////////////////////////////////////\n" << std::endl;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 22:08:12 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/14 22:08:13 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/14 22:16:51 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Form::Form(const std::string &name, int gradeSign, int gradeExec) : _name(name),
 	std::cout << "Form of " << this->_name << " is constructed" << std::endl;
 }
 
-Form::Form(const Form &src) : _name(src.getName()), _isSigned(src.getSignStatus()), _gradeSign(src.getGradeSign()), _gradeExec(getGradeExec())
+Form::Form(const Form &src) : _name(src.getName()), _isSigned(src.getSignStatus()), _gradeSign(src.getGradeSign()), _gradeExec(src.getGradeExec())
 {
 	*this = src;
 }

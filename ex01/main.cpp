@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:19 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/14 21:18:45 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/14 22:17:53 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,12 @@ int main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << "///////////////////////////////////////////////////" << std::endl;
+	std::cout << "\n///////////////// Deep Copy Test //////////////" << std::endl;
+	std::cout << form1 << std::endl;
+	std::cout << "\n";
+	Form formCp = Form(form1);
+	std::cout << formCp << std::endl;
+	std::cout << "///////////////////////////////////////////////////" << std::endl;
 	return (0);
 }
