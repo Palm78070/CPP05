@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 18:33:52 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/15 20:02:30 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/15 22:04:38 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,10 @@ void AForm::beSigned(const Bureaucrat &src)
 		throw AForm::GradeTooLowException();
 }
 
-void AForm::execute(Bureaucrat const &executor) const
-{
-	if (this->getName() == "ShrubberyCreationForm" && this->getSignStatus() == true && this->getGradeExec() >= 137)
-		executor.executeForm(*this);
-}
+//void AForm::execute(Bureaucrat const &executor) const
+//{
+//	(void)executor;
+//}
 
 std::ostream &operator<<(std::ostream &output, const AForm &src)
 {

@@ -25,3 +25,18 @@ const std::string ShrubberyCreationForm::getTarget(void) const
 {
 	return (this->_target);
 }
+
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+{
+	if (executor.getGrade() > this->getGradeExec())
+		throw AForm::GradeTooLowException();
+	std::ofstream file (this->getTarget() + "_shrubbery");
+	file << "         ###         " << std::endl;
+	file << "        #o###        " << std::endl;
+	file << "      #####o###      " << std::endl;
+	file << "     #o###|#/###     "<< std::endl;
+	file << "      ####|##o#      "<< std::endl;
+	file << "       # }|{  #      "<< std::endl;
+	file << "         }|{         "<< std::endl;
+	file.close();
+}

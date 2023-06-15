@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:13 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/15 20:02:26 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/15 21:53:44 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,18 @@ void Bureaucrat::signForm(AForm &Aform)
 
 void Bureaucrat::executeForm(AForm const &form)
 {
-
+	try
+	{
+		form.execute(*this);
+	}
+	catch (AForm::GradeTooHighException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch (AForm::GradeTooLowException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &output, const Bureaucrat &src)
