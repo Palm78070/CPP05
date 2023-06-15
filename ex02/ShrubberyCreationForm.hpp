@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 18:48:33 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/15 22:33:01 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/16 03:07:38 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ class AForm;
 
 class ShrubberyCreationForm : public AForm
 {
-	public:
-		ShrubberyCreationForm(const std::string &target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &src);
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &src);
-		~ShrubberyCreationForm(void);
+public:
+	ShrubberyCreationForm(const std::string &target);
+	ShrubberyCreationForm(const ShrubberyCreationForm &src);
+	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &src);
+	~ShrubberyCreationForm(void);
 
-		const std::string getTarget(void) const;
-		virtual void execute(Bureaucrat const &executor) const;
+	const std::string getTarget(void) const;
+	virtual void execute(Bureaucrat const &executor) const;
 
-	private:
-		const std::string	_target;
+private:
+	const std::string _target;
 };
 
 #endif

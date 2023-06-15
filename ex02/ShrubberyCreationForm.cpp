@@ -30,13 +30,26 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() > this->getGradeExec())
 		throw AForm::GradeTooLowException();
-	std::ofstream file (this->getTarget() + "_shrubbery");
-	file << "         ###         " << std::endl;
-	file << "        #o###        " << std::endl;
-	file << "      #####o###      " << std::endl;
-	file << "     #o###|#/###     "<< std::endl;
-	file << "      ####|##o#      "<< std::endl;
-	file << "       # }|{  #      "<< std::endl;
-	file << "         }|{         "<< std::endl;
-	file.close();
+	try
+	{
+		std::ofstream file(this->getTarget() + "_shrubbery");
+		if (!file)
+			throw std::ios_base::failure("Failed to create the file");
+		else
+		{
+			file << "         ###         " << std::endl;
+			file << "        #o###        " << std::endl;
+			file << "      #####o###      " << std::endl;
+			file << "     #o###|#/###     " << std::endl;
+			file << "      ####|##o#      " << std::endl;
+			file << "       # }|{  #      " << std::endl;
+			file << "         }|{         " << std::endl;
+			file.close();
+			std::cout << "File name: " << this->getTarget() + "_shrubbery is successfully create" << std::endl;
+		}
+	}
+	catch (const std::ios_base::failure &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }

@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 18:33:52 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/15 22:04:38 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/16 02:22:23 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "AForm.hpp"
 
@@ -70,11 +68,6 @@ void AForm::beSigned(const Bureaucrat &src)
 	else
 		throw AForm::GradeTooLowException();
 }
-
-//void AForm::execute(Bureaucrat const &executor) const
-//{
-//	(void)executor;
-//}
 
 std::ostream &operator<<(std::ostream &output, const AForm &src)
 {

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:19 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/15 22:42:28 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/16 03:14:33 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-void	ft_signForm(const Bureaucrat &src, AForm &AForm)
+void ft_signForm(const Bureaucrat &src, AForm &AForm)
 {
 	try
 	{
@@ -31,47 +31,23 @@ void	ft_signForm(const Bureaucrat &src, AForm &AForm)
 
 int main(void)
 {
-	std::cout << "///////////////// Normal case Test //////////////" << std::endl;
+	std::cout << "///////////////// Shrubbery Test //////////////" << std::endl;
 	Bureaucrat Bob = Bureaucrat("Bob", 120);
 	std::cout << Bob << std::endl;
 	ShrubberyCreationForm shcf1 = ShrubberyCreationForm("Whitehouse");
-	shcf1.getName();
+	std::cout << "Form name: " << shcf1.getName() << " => Target: " << shcf1.getTarget() << std::endl;
 	Bob.executeForm(shcf1);
-	//AForm AForm1 = AForm("AForm1", 145, 137);
-	//std::cout << AForm1 << std::endl;
-	//Bob.signForm(AForm1);
-	//std::cout << "Signed status after " << Bob.getName() << " sign AForm => " << AForm1.getSignStatus() << std::endl;
+	std::cout << "\nTest form boundary:" << std::endl;
+	Bureaucrat Jim = Bureaucrat("Jim", 150);
+	std::cout << Jim << std::endl;
+	std::cout << "Jim try to execute form => ";
+	Jim.executeForm(shcf1);
+	std::cout << "\nTest deep copy:" << std::endl;
+	std::cout << "Try copy to shcf2" << std::endl;
+	ShrubberyCreationForm shcf2 = ShrubberyCreationForm(shcf1);
+	std::cout << "Form name: " << shcf2.getName() << " => Target: " << shcf2.getTarget() << std::endl;
+	Bob.executeForm(shcf1);
 	std::cout << "///////////////////////////////////////////////////" << std::endl;
-	//std::cout << "\n///////////////// Sign status Test //////////////" << std::endl;
-	//Bureaucrat Ken = Bureaucrat("Ken", 150);
-	//std::cout << Ken << std::endl;
-	//AForm AForm2 = AForm("AForm2", 72, 45);
-	//std::cout << AForm2 << std::endl;
-	//Ken.signForm(AForm2);
-	//std::cout << "///////////////////////////////////////////////////" << std::endl;
-	//std::cout << "\n///////////////// Grade high/Low Test //////////////" << std::endl;
-	//try
-	//{
-	//	AForm AFormOut1 = AForm("AFormOut1", 151, 10);
-	//}
-	//catch (AForm::GradeTooLowException &e)
-	//{
-	//	std::cout << e.what() << std::endl;
-	//}
-	//try
-	//{
-	//	AForm AFormOut2 = AForm("AFormOut2", 20, 0);
-	//}
-	//catch (AForm::GradeTooHighException &e)
-	//{
-	//	std::cout << e.what() << std::endl;
-	//}
-	//std::cout << "///////////////////////////////////////////////////" << std::endl;
-	//std::cout << "\n///////////////// Deep Copy Test //////////////" << std::endl;
-	//std::cout << AForm1 << std::endl;
-	//std::cout << "\n";
-	//AForm AFormCp = AForm(AForm1);
-	//std::cout << AFormCp << std::endl;
-	//std::cout << "///////////////////////////////////////////////////" << std::endl;
+
 	return (0);
 }
