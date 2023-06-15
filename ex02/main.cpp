@@ -6,12 +6,13 @@
 /*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:19 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/16 03:14:33 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/16 03:32:21 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 void ft_signForm(const Bureaucrat &src, AForm &AForm)
 {
@@ -48,6 +49,11 @@ int main(void)
 	std::cout << "Form name: " << shcf2.getName() << " => Target: " << shcf2.getTarget() << std::endl;
 	Bob.executeForm(shcf1);
 	std::cout << "///////////////////////////////////////////////////" << std::endl;
-
+	std::cout << "///////////////// Robotomy Test //////////////" << std::endl;
+	std::cout << Bob << std::endl;
+	RobotomyRequestForm rrf1 = RobotomyRequestForm("Robot1");
+	std::cout << "Form name: " << rrf1.getName() << " => Target: " << rrf1.getTarget() << std::endl;
+	Bob.executeForm(rrf1);
+	std::cout << "///////////////////////////////////////////////////" << std::endl;
 	return (0);
 }

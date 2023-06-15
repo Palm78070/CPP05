@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+         #
+#    By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/12 23:54:23 by rthammat          #+#    #+#              #
-#    Updated: 2023/06/15 22:41:53 by rthammat         ###   ########.fr        #
+#    Updated: 2023/06/16 03:31:35 by rthammat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS := main.cpp \
 	Bureaucrat.cpp \
 	AForm.cpp \
 	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
 
 OBJS := $(SRCS:.cpp=.o)
 
