@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:13 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/15 21:53:44 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/17 04:39:53 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int Bureaucrat::getGrade(void) const
 
 void Bureaucrat::increaseGrade(void)
 {
-	int	grade;
+	int grade;
 
 	grade = this->getGrade() - 1;
 	std::cout << "Try to increase grade of " << this->_name << std::endl;
@@ -67,7 +67,7 @@ void Bureaucrat::increaseGrade(void)
 
 void Bureaucrat::decreaseGrade(void)
 {
-	int	grade;
+	int grade;
 
 	grade = this->getGrade() + 1;
 	std::cout << "Try to decrease grade of " << this->_name << std::endl;
@@ -88,12 +88,12 @@ void Bureaucrat::signForm(AForm &Aform)
 	catch (AForm::GradeTooHighException &e)
 	{
 		std::cout << this->getName() << " couldn't sign " << Aform.getName() << " because " << e.what() << std::endl;
-		return ;
+		return;
 	}
 	catch (AForm::GradeTooLowException &e)
 	{
 		std::cout << this->getName() << " couldn't sign " << Aform.getName() << " because " << e.what() << std::endl;
-		return ;
+		return;
 	}
 	std::cout << this->getName() << " signed " << Aform.getName() << std::endl;
 }
@@ -107,11 +107,14 @@ void Bureaucrat::executeForm(AForm const &form)
 	catch (AForm::GradeTooHighException &e)
 	{
 		std::cout << e.what() << std::endl;
+		return;
 	}
 	catch (AForm::GradeTooLowException &e)
 	{
 		std::cout << e.what() << std::endl;
+		return;
 	}
+	// std::cout << this->getName() << " executed " << form.getName() << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &output, const Bureaucrat &src)
@@ -119,4 +122,3 @@ std::ostream &operator<<(std::ostream &output, const Bureaucrat &src)
 	output << src.getName() << ", bureaucrat grade " << src.getGrade();
 	return (output);
 }
-

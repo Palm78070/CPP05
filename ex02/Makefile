@@ -6,7 +6,7 @@
 #    By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/12 23:54:23 by rthammat          #+#    #+#              #
-#    Updated: 2023/06/16 03:31:35 by rthammat         ###   ########.fr        #
+#    Updated: 2023/06/17 04:28:03 by rthammat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS := main.cpp \
 	AForm.cpp \
 	ShrubberyCreationForm.cpp \
 	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp \
 
 OBJS := $(SRCS:.cpp=.o)
 
