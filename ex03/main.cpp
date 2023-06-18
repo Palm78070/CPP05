@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
+/*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:19 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/17 19:18:58 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/18 18:37:40 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int main(void)
 	AForm *shcf1 = someRandomIntern1.makeForm("shrubbery creation", "Whitehouse");
 	std::cout << "Form name: " << shcf1->getName() << " => Target: " << shcf1->getTarget() << std::endl;
 	Bob.executeForm(*shcf1);
+	//if (shcf1)
+	//	delete shcf1;
 	std::cout << "\nTest Intern form name not match" << std::endl;
 	AForm *shcf2 = someRandomIntern1.makeForm("xxx", "Whitehouse");
 	(void)shcf2;
@@ -36,6 +38,8 @@ int main(void)
 	AForm *rrf = someRandomIntern2.makeForm("robotomy request", "Bender");
 	std::cout << "Form name: " << rrf->getName() << " => Target: " << rrf->getTarget() << std::endl;
 	Tony.executeForm(*rrf);
+	//if (rrf)
+	//	delete rrf;
 	std::cout << "\nTest Intern form name not match" << std::endl;
 	AForm *rrf2 = someRandomIntern2.makeForm("abc", "Bender");
 	(void)rrf2;

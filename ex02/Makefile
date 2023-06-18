@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+         #
+#    By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/12 23:54:23 by rthammat          #+#    #+#              #
-#    Updated: 2023/06/17 04:28:03 by rthammat         ###   ########.fr        #
+#    Updated: 2023/06/18 18:45:09 by rthammat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 clean:
-	rm -rf *.o *_shrubbery
+	rm -rf *.o *_shrubbery *.dSYM
 
 fclean: clean
 	rm -rf $(NAME)

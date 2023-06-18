@@ -6,7 +6,7 @@
 #    By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/12 23:54:23 by rthammat          #+#    #+#              #
-#    Updated: 2023/06/14 19:30:43 by rthammat         ###   ########.fr        #
+#    Updated: 2023/06/18 18:45:33 by rthammat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 clean:
-	rm -rf *.o
+	rm -rf *.o *.dSYM
 
 fclean: clean
 	rm -rf $(NAME)
