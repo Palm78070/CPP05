@@ -2,12 +2,12 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("shrubbery creation", 145, 137), _target(target)
 {
-	std::cout << "ShrubberyCreationForm: " << _target << " is constructed" << std::endl;
+	//std::cout << "ShrubberyCreationForm: " << _target << " is constructed" << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
-	std::cout << "ShrubberyCreationForm: " << _target << " is destructed" << std::endl;
+	//std::cout << "ShrubberyCreationForm: " << _target << " is destructed" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm("ShrubberyCreationForm", 145, 137), _target(src.getTarget())

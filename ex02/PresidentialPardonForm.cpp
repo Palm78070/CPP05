@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
+/*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 04:15:40 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/17 05:50:06 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/18 20:30:07 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("presidential pardon", 25, 5), _target(target)
 {
-	std::cout << "PresidentialPardonForm: " << _target << " is constructed" << std::endl;
+	//std::cout << "PresidentialPardonForm: " << _target << " is constructed" << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void)
 {
-	std::cout << "PresidentialPardonForm: " << _target << " is destructed" << std::endl;
+	//std::cout << "PresidentialPardonForm: " << _target << " is destructed" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src) : AForm("PresidentialPardonForm", 25, 5), _target(src.getTarget())

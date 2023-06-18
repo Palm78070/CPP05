@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 05:11:53 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/18 18:33:26 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/18 20:11:48 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ public:
 		}
 	};
 
-private:
-	AForm *_res;
+//private:
+//	AForm *_res;
 };
 
 #endif

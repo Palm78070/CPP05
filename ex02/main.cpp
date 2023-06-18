@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
+/*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 02:22:19 by rthammat          #+#    #+#             */
-/*   Updated: 2023/06/17 04:49:44 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/06/18 20:34:39 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-void ft_signForm(const Bureaucrat &src, AForm &AForm)
-{
-	try
-	{
-		AForm.beSigned(src);
-	}
-	catch (AForm::GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	catch (AForm::GradeTooLowException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
+//void ft_signForm(const Bureaucrat &src, AForm &AForm)
+//{
+//	try
+//	{
+//		AForm.beSigned(src);
+//	}
+//	catch (AForm::GradeTooHighException &e)
+//	{
+//		std::cout << e.what() << std::endl;
+//	}
+//	catch (AForm::GradeTooLowException &e)
+//	{
+//		std::cout << e.what() << std::endl;
+//	}
+//}
 
 int main(void)
 {
@@ -55,10 +55,14 @@ int main(void)
 	std::cout << Tony << std::endl;
 	RobotomyRequestForm rrf1 = RobotomyRequestForm("Robot1");
 	std::cout << "Form name: " << rrf1.getName() << " => Target: " << rrf1.getTarget() << std::endl;
+	srand((unsigned int)time(NULL));
+	Tony.executeForm(rrf1);
+	Tony.executeForm(rrf1);
 	Tony.executeForm(rrf1);
 	std::cout << "\nTest form boundary:" << std::endl;
 	std::cout << Bob << std::endl;
 	std::cout << "Bob try to execute form => ";
+	srand((unsigned int)time(NULL));
 	Bob.executeForm(rrf1);
 	std::cout << "\nTest deep copy:" << std::endl;
 	std::cout << "Try copy to rrf2" << std::endl;

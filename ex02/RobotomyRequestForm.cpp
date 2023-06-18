@@ -2,12 +2,12 @@
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("robotomy request", 72, 45), _target(target)
 {
-	std::cout << "RobotomyRequestForm: " << _target << " is constructed" << std::endl;
+	//std::cout << "RobotomyRequestForm: " << _target << " is constructed" << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(void)
 {
-	std::cout << "RobotomyRequestForm: " << _target << " is destructed" << std::endl;
+	//std::cout << "RobotomyRequestForm: " << _target << " is destructed" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) : AForm("RobotomyRequestForm", 72, 45), _target(src.getTarget())
@@ -32,7 +32,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 		throw AForm::GradeTooLowException();
 	std::cout << executor.getName() << " executed " << this->getName() << std::endl;
 	std::cout << "Bzzzzzz... => ";
-	srand((unsigned int)time(NULL));
+	//srand((unsigned int)time(NULL));
 	if (rand() % 2 != 0)
 		std::cout
 			<< this->getTarget() << " has been robotomized successfully" << std::endl;
